@@ -29,6 +29,8 @@ gem 'high_voltage', '~> 3.1'
 
 gem 'devise'
 
+gem 'simple_form'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
