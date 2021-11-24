@@ -1,31 +1,39 @@
-<h3>Log in</h3>
+<div class="container overflow-hidden p-3">
+  <div class="row justify-content-center">
+    <h3 class="text-center">Sign in</h3>
+  </div>
+  <div class="row justify-content-center gy-5">
+    <div class="col-8 col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-group">
 
-<div class="col">
-  <div class="card">
-    <div class="card-body">
-      <div class="form-group">
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="form-inputs">
+                <%= f.input :email,
+                            required: false,
+                            autofocus: true,
+                            input_html: {autocomplete: "email"} %>
+                <%= f.input :password,
+                            required: false,
+                            input_html: {autocomplete: "current-password"} %>
+                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              </div>
 
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-inputs">
-            <%= f.input :email,
-                        required: false,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" } %>
-            <%= f.input :password,
-                        required: false,
-                        input_html: { autocomplete: "current-password" } %>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              <div class="form-actions">
+                <%= f.button :submit, "Sign in", class: "btn btn-dark" %>
+              </div>
+            <% end %>
+            <p></p>
+
+            <%= render "devise/shared/links" %>
+
           </div>
-
-          <div class="form-actions">
-            <%= f.button :submit, "Log in", class: "btn btn-dark" %>
-          </div>
-        <% end %>
-        <p></p>
-
-        <%= render "devise/shared/links" %>
-
+        </div>
       </div>
     </div>
   </div>
+  <div class="col-6 col-md-4"></div>
 </div>
+
+
