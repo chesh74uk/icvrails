@@ -1,2 +1,30 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<p></p>
+<h3 class="text-center">Articles</h3>
+<p></p>
+<div class="container">
+  <div class="row mx-auto justify-content-center">
+    <div class="col-md-6">
+
+      <% @articles.each do |a| %>
+
+        <div class="card text-dark bg-light mb-3" style="max-width: 540px;">
+          <div class="row mx-auto g-0">
+            <div class="col-md-4">
+              <%= image_tag "icvLogoSquare.png", class: "img-fluid rounded-start" %>
+              <!--        <img src="..." class="img-fluid rounded-start" alt="...">-->
+            </div>
+            <div class="col-md-8">
+              <h5 class="card-title"><%= a.title %></h5>
+              <div class="card-body">
+                <p class="card-text"><%= a.summary %></p>
+                <a href="<%= a.link %>" class="btn btn-secondary" target="_blank">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
