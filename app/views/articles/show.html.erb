@@ -1,0 +1,10 @@
+<h1>Show</h1>
+
+<%= simple_form_for @article do | a | %>
+  <%= a.input :title %>
+  <%= a.input :summary %>
+  <%= a.input :link %>
+  <%= a.input :image_link %>
+  <%= a.input :filetype, collection: Article::FILETYPES %>
+  <%= a.input :stage, collection: Article::STAGES %>
+<% end %>
