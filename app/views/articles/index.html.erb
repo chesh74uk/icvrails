@@ -3,18 +3,17 @@
 <p></p>
 <div class="container">
   <div class="row mx-auto justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-10">
 
       <% @articles.each do |a| %>
 
-        <div class="card text-dark bg-light mb-3" style="max-width: 540px;">
-          <div class="row mx-auto g-0">
-            <div class="col-md-4">
-              <%= image_tag "icvLogoSquare.png", class: "img-fluid rounded-start" %>
-              <!--        <img src="..." class="img-fluid rounded-start" alt="...">-->
+        <div class="card text-dark bg-light">
+          <div class="row align-items-center mx-auto g-0">
+            <div class="col-md-5">
+              <%= image_tag a.image_link, class: "img-fluid rounded-start" %>
             </div>
-            <div class="col-md-8">
-              <h5 class="card-title"><%= a.title %></h5>
+            <div class="col-md-7">
+              <h5 class="card-header"><%= a.title %></h5>
               <div class="card-body">
                 <p class="card-text"><%= a.summary %></p>
                 <a href="<%= a.link %>" class="btn btn-secondary" target="_blank">View</a>
