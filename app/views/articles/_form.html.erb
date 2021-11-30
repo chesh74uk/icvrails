@@ -1,0 +1,31 @@
+<%= form_for @article do | article | %>
+<div class="card">
+  <div class="card-body">
+    <div class="mb-3">
+      <%= article.label "Article link", { class: "form-label"} %>
+      <%= article.text_field :link, { class: "form-control"} %>
+    </div>
+    <div class="mb-3">
+      <%= article.label :title, { class: "form-label"} %>
+      <%= article.text_field :title, { class: "form-control"} %>
+    </div>
+    <div class="mb-3">
+      <%= article.label :summary, { class: "form-label"} %>
+      <%= article.text_area :summary, { class: "form-control"} %>
+    </div>
+<!--    <div class="mb-3">-->
+      <%#= article.label :image_link, { class: "form-label"} %>
+      <%#= article.text_field :image_link, { class: "form-control"} %>
+<!--    </div>-->
+    <div class="mb-3">
+      <%= article.label :filetype, { class: "form-label"} %>
+      <%= article.select(:filetype, Article::FILETYPES)  %>
+    </div>
+    <div class="mb-3">
+      <%= article.label :stage, { class: "form-label"} %>
+      <%= article.select(:stage, Article::STAGES) %>
+    </div>
+    <%= article.submit "Submit", class: "btn btn-primary" %>
+  </div>
+</div>
+<% end %>

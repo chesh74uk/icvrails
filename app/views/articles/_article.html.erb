@@ -1,0 +1,28 @@
+<div class="card text-dark bg-light">
+  <div class="row align-items-center mx-auto g-0">
+    <div class="col-md-5">
+      <%= image_tag article.image_link, class: "img-fluid rounded-start" %>
+    </div>
+    <div class="col-md-7">
+      <h5 class="card-header"><%= article.title %></h5>
+      <div class="card-body">
+        <p class="card-text"><%= article.summary %></p>
+        <div class="row justify-content-between">
+          <div class="col-5">
+            <a href="<%= article.link %>" class="btn btn-secondary" target="_blank">View</a>
+          </div>
+          <div class="col-4">
+            <%= link_to 'Edit', edit_article_path(article), class: "btn btn-warning" %>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer">
+        <div class="row justify-content-center">
+          <div class="col-5"><%= article.stage %></div>
+          <div class="col-4"><%= article.filetype %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
