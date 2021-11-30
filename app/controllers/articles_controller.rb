@@ -15,6 +15,9 @@ class ArticlesController < ApplicationController
 
   def show; end
 
+  def create
+  end
+
   private
 
   def new_article
