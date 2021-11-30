@@ -6,16 +6,16 @@
         <div class="card">
           <div class="card-body">
             <div class="mb-3">
+              <%= a.label "Article link", { class: "form-label"} %>
+              <%= a.text_field :link, { class: "form-control"} %>
+            </div>
+            <div class="mb-3">
               <%= a.label :title, { class: "form-label"} %>
               <%= a.text_field :title, { class: "form-control"} %>
             </div>
             <div class="mb-3">
               <%= a.label :summary, { class: "form-label"} %>
               <%= a.text_area :summary, { class: "form-control"} %>
-            </div>
-            <div class="mb-3">
-              <%= a.label :link, { class: "form-label"} %>
-              <%= a.text_field :link, { class: "form-control"} %>
             </div>
             <div class="mb-3">
               <%= a.label :image_link, { class: "form-label"} %>
@@ -36,5 +36,10 @@
     </div>
   </div>
 </div>
+<h3>Preview</h3>
+
+
+Title: <%= @preview.nil? ? "" : @preview.body %>
+
 
 
